@@ -1,0 +1,17 @@
+step1: command for starting the docker:-
+
+sudo docker run --rm -d -p 4567:4567 dlsniper/kinesalite:1.11.4
+
+
+Step 2: execute python writer.py to create a kinesis stream:
+
+python3 writer.py --streamName stream_name --data '{ "data" : "mein hu" }'
+
+
+step 3: start strem 
+
+sls offline start
+
+step 4: invoke serverless
+
+sls invoke local -f function_name
